@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "a3b746f3-ecf9-4e68-9093-b4534526a8d8",
+		"name": "conductor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Loja",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Loja Hygor\",\r\n    \"endereco\": \"Rua hello world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/lojas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Lojas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/lojas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Loja",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/lojas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Loja",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Loja do Hygor\",\r\n    \"endereco\": \"Rua hello world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/lojas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dataDeConfirmamacao\": \"2021-02-28\",\r\n  \"endereco\": \"Rua Vega\",\r\n  \"itemDePedido\": [\r\n    {\r\n      \"descricao\": \"Vaga na Conductor\",\r\n      \"precoUnitario\": 10000.00,\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"descricao\": \"Vaga na Conductor 2\",\r\n      \"precoUnitario\": 11000.00,\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"loja\": {\r\n      \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/lojas/1/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas",
+						"1",
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pedido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitar Reembolso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/lojas/1/pedidos/1/reembolso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas",
+						"1",
+						"pedidos",
+						"1",
+						"reembolso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar Pedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroCartaoCredito\": \"5261853867938719\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/lojas/1/pedidos/1/pagamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lojas",
+						"1",
+						"pedidos",
+						"1",
+						"pagamentos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
